@@ -81,12 +81,13 @@ const Home = () => {
         </div>
 
         {/* Filter */}
-        <div className="flex">
+        {/* Filter */}
+        <div className="flex flex-col md:flex-row md:items-end space-y-4 md:space-y-0 md:space-x-4">
           {/* Search Input */}
-          <div className="relative mb-8">
+          <div className="relative md:mb-0">
             <label className="block text-sm mb-2">Filter by coin name:</label>
             <input
-              className="w-50 px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full md:w-50 px-4 py-2 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="Filter crypto..."
               value={searchTerm}
               onChange={handleSearch}
@@ -94,12 +95,12 @@ const Home = () => {
           </div>
 
           {/* Market Cap Filter */}
-          <div className="mb-8 ml-2">
+          <div className="mb-2 md:mb-0">
             <label className="block text-sm mb-2">Filter by market cap:</label>
             <select
               value={marketCapFilter}
               onChange={handleMarketCapChange}
-              className="w-50 px-4 py-2 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full md:w-50 px-4 py-2 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="All">All</option>
               <option value="Low">Low (below $1B)</option>
@@ -110,7 +111,7 @@ const Home = () => {
         </div>
 
         {/* Table */}
-        <div className="overflow-x-auto bg-gray-800 rounded-lg shadow-lg">
+        <div className="overflow-x-auto bg-gray-800 rounded-lg shadow-lg mt-5">
           {loading ? (
             <div className="p-4">
               <TableSkeleton />
